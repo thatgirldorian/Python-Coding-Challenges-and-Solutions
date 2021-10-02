@@ -22,3 +22,24 @@ sports_directory["soccer"][0] = "Andres"
 
 #Change the value 20 in z to 30
 z[0]["y"] = 30
+
+
+#2. Create a function iterateDictionary(some_list) that, given a list of dictionaries, the function loops through each dictionary in the list and prints each key and the associated value. 
+
+
+ def iterateDictionary(some_list):
+   for dic in some_list:
+     for key in dic:
+       print(dic[key])
+
+
+
+ students = [
+          {'first_name':  'Michael', 'last_name' : 'Jordan'},
+          {'first_name' : 'John', 'last_name' : 'Rosales'},
+          {'first_name' : 'Mark', 'last_name' : 'Guillen'},
+          {'first_name' : 'KB', 'last_name' : 'Tonel'}
+     ]
+
+
+ iterateDictionary(students) 
