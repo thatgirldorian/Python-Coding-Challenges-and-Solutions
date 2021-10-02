@@ -43,3 +43,39 @@ z[0]["y"] = 30
 
 
  iterateDictionary(students) 
+     
+     
+     
+ #3. Create a function iterateDictionary2(key_name, some_list) that, given a list of dictionaries and a key name, the function prints the value stored in that key for each dictionary. For example, iterateDictionary2('first_name', students) should output:
+
+
+def iterateDictionary2(key_name, some_list):
+  for val in some_list:
+    if (key_name == "first_name"):
+      res = (list(val.values())[0])
+      print(res)
+
+    else:
+      res = (list(val.values())[1])
+      print(res)
+      
+
+
+
+
+    
+students = [
+      {'first_name':  'Michael', 'last_name' : 'Jordan'},
+      {'first_name' : 'John', 'last_name' : 'Rosales'},
+      {'first_name' : 'Mark', 'last_name' : 'Guillen'},
+      {'first_name' : 'KB', 'last_name' : 'Tonel'}
+    ]
+
+
+iterateDictionary2('last_name', students)
+
+    
+     
+     
+     
+     
