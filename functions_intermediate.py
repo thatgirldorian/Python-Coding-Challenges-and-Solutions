@@ -1,4 +1,4 @@
-# #1. Update Values in Dictionaries and Lists
+#1. Update Values in Dictionaries and Lists
 
 x = [ [5,2,3], [10,8,9] ] 
 students = [
