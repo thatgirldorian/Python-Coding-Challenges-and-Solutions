@@ -77,5 +77,30 @@ iterateDictionary2('last_name', students)
     
      
      
+# 4. Iterate Through a Dictionary with List Values
+# Create a function printInfo(some_dict) that given a dictionary whose values are all lists, prints the name of each key along with the size of its list, and then prints the associated values within each key's list. 
+
+def printInfo(some_dict):
+  #  for key in some_dict.keys():
+  #    print(key)
+     for key, values in some_dict.items():
+      print(len(values), key)
+      if(isinstance(values, list)):
+        for value in values:
+            print(value)
+      else:
+        print(value)
+
+
+dojo = {
+   'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
+   'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
+}
+
+printInfo(dojo)
+
+
+
+     
      
      
