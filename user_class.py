@@ -1,44 +1,64 @@
-# creating a class
+#create user class 
 class User:
-  bank_name = "WEE National Bank"
-  def __init__(self, name, email_address, deposit_amount, user_balance):
-    self.name = name
-    self.email = email_address
-    self.deposit_amount = deposit_amount
-    self.user_balance = user_balance
+
+    def __init__(self, name):
+        self.name = name
+        self.amount = 0
 
 #creating a make_deposit method for my objects
-  def makeDeposit(self):
-    #Have the first user make 3 deposits and 1 withdrawal and then display their balance
-    if self.deposit_amount >= 1:print(f"Hello, my name is {self.name} and I want to deposit {self.deposit_amount * 3}.") 
-    else: return (self.deposit_amount)
-    #printing to see if it works the way it should
-    
+    def makeDeposit(self, amount):
+        self.amount += amount
 
-#creating a method for withdrawal
-  def makeWithdrawal(self):
-    #printing to see if it works the way it should
-    print(f"Hello, my name is {self.name} and I'd also like to withdraw {self.user_balance - 500}.")
+#creating a withdrawal class
+    def makeWithdrawal(self, amount):
+      self.amount -= amount
 
-  def displayUserBalance(self):
-    #printing to see if it works the way it should
-    print(f"Hello, my name is {self.name} and I currently have {self.user_balance} in my account.")
-
-#instantainting an instance to create new object
-user1 = User("John", "john@gmail.com", 500, 2000)
-user1.makeDeposit()
-user1.makeWithdrawal()
-user1.displayUserBalance()
-
-# #a few other instances of this class
-# user2 = User("Debbie", "debbie@gmail.com", 900, 8000)
-
-# user3 = User("Bola", "bola@gmail.com", 800, 5000)
-
-# user4 = User("Osas", "osas@gmail.com", 600, 3000)
+# add method to display balance
+    def displayBalance(self):
+      print(f"User: {self.name}, Balance: {self.amount}")
+        
+#adding a transfer method to let one user transfer to another
+    def transferAmount(self, amount, user):
+      self.amount -= amount
+      user.amount += amount
+      self.displayBalance()
+      user.displayBalance()
 
 
-# #Have user 2 make three deposits, 1 withdrawal and then display their bank balance
-# user2.makeDeposit()
+
+
+
+#instantiating instances to create new objects
+Debbie = User("Debbie")
+Josh = User("Josh")
+Chi = User("Chi")
+
+#Debbie makes 3 different deposits & 1 withdrawal 
+Debbie.makeDeposit(100)
+Debbie.makeDeposit(300)
+Debbie.makeDeposit(300)
+Debbie.makeWithdrawal(200)
+
+#to show our current balance
+Debbie.displayBalance()
+
+#Josh makes 2 different deposits & 2 withdrawals 
+Josh.makeDeposit(300)
+Josh.makeDeposit(800)
+Josh.makeWithdrawal(490)
+
+Josh.displayBalance()
+
+#Chi makes 1 different deposits & 3 withdrawals 
+Chi.makeDeposit(600)
+Chi.makeWithdrawal(90)
+Chi.makeWithdrawal(79)
+Chi.makeWithdrawal(200)
+
+Chi.displayBalance()
+
+
+#making a transfer to another user
+Josh.transferAmount(200, Debbie)
 
 
