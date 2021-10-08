@@ -1,8 +1,35 @@
+class User:
+
+    def __init__(self, name):
+        self.name = name
+        self.amount = 0
+        self.account = bankAccount(interest_rate=0.01, balance=0)
+
+    def make_deposit(self, amount):
+        self.account.deposit(amount)
+        print(self.account.balance)
+        return self
+
+    def make_withdrawl(self,amount):
+        self.account.withdraw(amount)
+        print(self.account.balance)
+        return self
+
+    def display_user_balance(self):
+        print(f"User: {self.name}, Balance: {self.amount}")
+        return self
+
+    def transfer_money(self,amount,user):
+        self.amount -= amount
+        user.amount += amount
+        self.display_user_balance()
+        user.display_user_balance()
+        return self
+
 #create bankAccount class
 class bankAccount:
 
-  def __init__ (self, name, interest_rate, balance):
-    self.name = name
+  def __init__ (self, interest_rate, balance):
     self.interest_rate = 0.01
     self.balance = 0
     
@@ -22,61 +49,15 @@ class bankAccount:
     
 
   def displayAccountInfo(self):
-    print(f"User: {self.name}, Account Balance: ${self.balance}, Interest Rate: {self.interest_rate}")
+    print(f"Account Balance: ${self.balance}, Interest Rate: {self.interest_rate}")
     return self
 
   def yieldInterest(self):
     self.interest_rate = self.balance * self.interest_rate
     return self
 
-#creating instances
-Debbie = bankAccount("Debbie", 0, 0)
-Josh = bankAccount("Josh", 0, 0)
 
-#Making 3 deposits & 1 withdrawal for first user
-Debbie.deposit(700).deposit(280).deposit(410).withdraw(80)
-
-Debbie.yieldInterest()
-Debbie.displayAccountInfo()
-
-#Making 2 deposits & 4 withdrawals for second user
-Josh.deposit(1800).deposit(2080).withdraw(80)
-Josh.withdraw(48)
-Josh.withdraw(47)
-Josh.withdraw(52)
-
-Josh.yieldInterest()
-Josh.displayAccountInfo()
-
-
-
-
-
-
-class User:
-
-    def __init__(self, name, account):
-        self.name = name
-        self.amount = 0
-        self.account = bankAccount(interest_rate=0.01, balance=0)
-
-    def make_deposit(self, amount):
-        self.account.make_deposit(100)
-
-    def make_withdrawl(self,amount):
-        self.amount -= amount
-
-    def display_user_balance(self):
-        print(f"User: {self.name}, Balance: {self.amount}")
-
-    def transfer_money(self,amount,user):
-        self.amount -= amount
-        user.amount += amount
-        self.display_user_balance()
-        user.display_user_balance()
-
-
-adrien = User("Adrien", 0)
+adrien = User("Adrien")
 nibbles = User("Mr. Nibbles")
 benny_bob = User("Benny Bob")
 
@@ -100,6 +81,28 @@ benny_bob.display_user_balance()
 
 
 nibbles.transfer_money(400, adrien)
+
+
+
+#creating instances
+Debbie = User("Debbie")
+Josh = User("Josh")
+
+#Making 3 deposits & 1 withdrawal for first user
+Debbie.make_deposit(700).make_deposit(280).make_deposit(410).make_withdrawl(80)
+
+Debbie.account.yieldInterest()
+Debbie.account.displayAccountInfo()
+
+#Making 2 deposits & 4 withdrawals for second user
+Josh.make_deposit(1800).make_deposit(2080).make_withdrawl(80).make_withdrawl(48).make_withdrawl(47).make_withdrawl(52)
+
+Josh.account.yieldInterest()
+Josh.account.displayAccountInfo()
+
+
+
+
 
 
 
