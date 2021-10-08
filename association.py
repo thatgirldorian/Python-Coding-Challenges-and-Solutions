@@ -6,8 +6,9 @@ class User:
         self.account = bankAccount(interest_rate=0.01, balance=0)
 
     def make_deposit(self, amount):
+        account_type = input("\nWhat account are you depositing to?\n") 
         self.account.deposit(amount)
-        print(self.account.balance)
+        print(f" {self.account.balance} has been deposited into your {account_type} account")
         return self
 
     def make_withdrawl(self,amount):
@@ -61,23 +62,11 @@ adrien = User("Adrien")
 nibbles = User("Mr. Nibbles")
 benny_bob = User("Benny Bob")
 
-adrien.make_deposit(100)
-adrien.make_deposit(200)
-adrien.make_deposit(50)
-adrien.make_withdrawl(45)
-adrien.display_user_balance()
+adrien.make_deposit(100).make_deposit(200).make_deposit(50).make_withdrawl(45).display_user_balance()
 
-nibbles.make_deposit(1000)
-nibbles.make_deposit(1000)
-nibbles.make_withdrawl(500)
-nibbles.make_withdrawl(300)
-nibbles.display_user_balance()
+nibbles.make_deposit(1000).make_deposit(1000).make_withdrawl(500).make_withdrawl(300).display_user_balance()
 
-benny_bob.make_deposit(1500)
-benny_bob.make_withdrawl(1000)
-benny_bob.make_withdrawl(5000)
-benny_bob.make_withdrawl(3000)
-benny_bob.display_user_balance()
+benny_bob.make_deposit(1500).make_withdrawl(1000).make_withdrawl(5000).make_withdrawl(3000).display_user_balance()
 
 
 nibbles.transfer_money(400, adrien)
