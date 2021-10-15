@@ -1,0 +1,38 @@
+
+h3, p {
+    text-align: center;
+}
+
+.container { 
+    width: 400px;
+    height: 400px;
+    background-color: gainsboro;
+    position: relative;
+    left: 150px;
+}
+
+.box {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 0;
+    margin: 0;
+}
+
+.boxOne {
+    background-color: red;
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    padding: 2px;
+} 
+
+.boxTwo {
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    
+    
+} 
+
