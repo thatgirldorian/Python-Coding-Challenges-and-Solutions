@@ -1,0 +1,12 @@
+table, th, td {
+    border: 1px solid black;
+}
+
+.container {
+    position: relative;
+    top: 20px;
+}
+
+h2 {
+    text-align: center;
+}
