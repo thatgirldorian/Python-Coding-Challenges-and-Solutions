@@ -5,3 +5,4 @@ Here is a repositiory for coding challenges I do in Python. I'm relearning the l
 Other technologies in this repo:
 - Flask
 - Jinja2
+- MySQL
