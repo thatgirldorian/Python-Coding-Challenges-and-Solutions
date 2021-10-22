@@ -1,4 +1,4 @@
-#create user class 
+#creating user class 
 class User:
 
     def __init__(self, name):
