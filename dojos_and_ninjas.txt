@@ -1,0 +1,30 @@
+use dojos_ninjas;
+
+/* Query: Create 3 new dojos */
+INSERT INTO dojos (name, id)
+VALUES ("Lagos", 01,), ("Benin", 02),("Abuja", 03),("Online", 04);
+
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM dojos;
+
+INSERT INTO ninjas (first_name,last_name,age,dojo_id, id)
+VALUES ("Bola","John",26,4, 1),("Isaac","Jude",30,4, 2),("Tola","Abdul",19,4, 3);
+
+INSERT INTO ninjas (first_name,last_name,age,dojo_id, id)
+VALUES ("Cherechi","Grace",32,1, 4),("Tochukwu","Chidi",26,1, 5),("Sade","Foluso",29,1,6);
+
+INSERT INTO ninjas (first_name,last_name,age,dojo_id, id)
+VALUES ("Ayinde","Ogunwande",44,2,7),("Uzo","Saheed",45,2, 8),("Ngozo","Echuru",26,2, 9);
+
+SELECT * FROM dojos
+LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id
+WHERE dojos.id = 4;
+
+SELECT * FROM dojos
+LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id
+WHERE dojos.id = 1;
+
+SELECT * FROM dojos
+LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id
+WHERE dojos.id = 2;
+
