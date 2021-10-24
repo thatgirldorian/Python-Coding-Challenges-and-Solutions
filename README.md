@@ -6,4 +6,4 @@ Other technologies in this repo:
 - Flask
 - Jinja2
 - MySQL (queries)
-- Workbench
+- MySQLWorkbench
