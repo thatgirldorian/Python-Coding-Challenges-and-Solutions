@@ -1,0 +1,25 @@
+h2 {
+    text-align: center;
+    padding: 20px;
+}
+
+.users-table {
+    padding-right: 250px;
+    padding-left: 250px;
+}
+
+a {
+    position: relative;
+    left: 250px;
+    margin-top: 20px;
+}
+
+.mb-3 {
+    padding-right: 250px;
+    padding-left: 250px;
+}
+
+.go-home a {
+    position: relative;
+    left: 250px;
+}
