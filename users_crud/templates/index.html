@@ -15,21 +15,30 @@
         <div class="users-table">
         <table class="table table-light table-bordered table-striped">
             <tr>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
+                <th scope="col">ID</th>
+                <th scope="col">Full Name</th>
                 <th scope="col">Email</th>
+                <th scope="col">Created_At</th>
+                <th scope="col">Actions</th>
             </tr>
             {% for each_user in users %}
             <tr >
-                <td scope="row" class="table-light">{{each_user.first_name}}</td>
-                <td scope="row" class="table-light">{{each_user.last_name}}</td>
+                <td scope="row" class="table-light">{{each_user.id}}</td>
+                <td scope="row" class="table-light">{{each_user.first_name}} {{each_user.last_name}}</td>
                 <td scope="row" class="table-light">{{each_user.email}}</td>
+                <td>{{ each_user.created_at.strftime("%b %d %Y") }}</td>
+                <td>
+                    <a href="/show/{{ each_user.id }}">Show</a> |
+                    <a href="/edit/{{ each_user.id }}">Edit</a> |
+                    <a href="/destroy/{{ each_user.id }}">Delete</a>
+                </td>
                 </tr>
                 {% endfor %}
         </table>
     </div>
 
     <a class="btn btn-info" href="/create_user">Add new user</a>
+    <a class="btn btn-success" href="/create_user">Update user</a>
     
 </body>
 </html>
