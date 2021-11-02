@@ -1,4 +1,4 @@
-Here's a screenshot of what this app looks like:
+Here's a screenshot of what this small CRUD app looks like:
 
 <img width="1460" alt="Screenshot 2021-10-29 at 1 54 37 AM" src="https://user-images.githubusercontent.com/40691059/139355876-69715b44-bec5-434a-bb03-ed2503c00128.png">
 
