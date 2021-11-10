@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Survey Page</title>
+</head>
+<body>
+
+    <h2 class="text-center my-5 mx-auto">Random Coding Happiness Survey</h2>
+    
+    <div class="wrapper bg-light">
+        <form action="/create/survey" method="POST" class="bg-light">
+            <div class="form-elements">
+            <label for="name">Your name:</label>
+            <input name="name" type="text" class="form-control">
+            </div>
+
+            <div class="form-elements">
+                <label for="location">Your current location:</label>
+                <select name="location" class="form-select">
+                    <option selected>Select one</option>
+                    <option value="Lagos">Lagos</option>
+                    <option value="Benin">Benin</option>
+                    <option value="Abuja">Abuja</option>
+                </select>
+            </div>
+
+            <div class="form-elements">
+                <label for="language">Favorite programming language:</label>
+                <select name="language" class="form-select">
+                    <option selected>Select one</option>
+                    <option value="Python">Python</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Golang">Golang</option>
+                </select>
+            </div>
+
+            <div class="form-elements">
+                <label for="comment" class="form-label">Comment:</label>
+                <textarea name="comment" class="form-control" rows="3"></textarea>
+            </div>
+            
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+        {% if messages %}                            <!-- check if there are any messages -->
+            {% for message in messages %}            <!-- loop through the messages -->
+                <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    </div>
+
+    
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
