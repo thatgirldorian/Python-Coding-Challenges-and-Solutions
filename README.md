@@ -7,3 +7,5 @@ Other technologies in this repository:
 - Jinja2
 - MySQL (queries)
 - MySQLWorkbench
+- TablePlus
+- HTML/CSS
